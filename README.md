@@ -29,16 +29,37 @@ From the above characteristic table, we can directly write the next state equati
 
 
 **PROGRAM**
-![WhatsApp Image 2024-12-15 at 10 01 12_e3001e64](https://github.com/user-attachments/assets/02d5d13b-e573-4638-9467-bdc686dae646)
+module t_ff_ (t, clk, rst, q);
+  input t, clk, rst;
+  output reg q;
 
- Developed by: RegisterNumber: 24900265
+  always @(posedge clk or posedge rst) 
+begin
+    if (rst)
+      q <= 0; // Reset the flip-flop
+    else if (t==0)
+      q <= q; 
+     else
+        q<=~q;
+  end
+endmodule
+
+ Developed by:A Chandhna
+ RegisterNumber: 24900265
 
 
 **RTL LOGIC FOR FLIPFLOPS**
-![WhatsApp Image 2024-12-15 at 10 01 12_59af366b](https://github.com/user-attachments/assets/99d2a65a-f9c5-4e03-9f40-5b33e3f1adcd)
+
+
+![9 rtl](https://github.com/user-attachments/assets/2d5a2eb7-4fff-45b7-ba8e-6672c4f8dd9b)
+
 
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
-![WhatsApp Image 2024-12-15 at 10 01 12_1688f6de](https://github.com/user-attachments/assets/3adcc70a-b874-4ba5-b2ea-6a2d3218e0dc)
+
+![9 td](https://github.com/user-attachments/assets/237d6380-a2ea-451b-aebd-ae3cb6db9237)
+
 
 **RESULTS**
+
+thus a t flip flop is implemented successfully.
